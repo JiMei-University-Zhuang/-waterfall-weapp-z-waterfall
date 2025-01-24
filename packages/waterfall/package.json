@@ -1,0 +1,26 @@
+{
+  "name": "@waterfall-weapp/z-waterfall",
+  "version": "1.0.0",
+  "description": "WeChat Mini Program Waterfall Component",
+  "main": "src/index.js",
+  "miniprogram": "src",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo 'No build required'",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "waterfall",
+    "miniprogram",
+    "weapp",
+    "wxapp",
+    "z-waterfall"
+  ],
+  "author": "小庄zzz",
+  "license": "MIT"
+} 

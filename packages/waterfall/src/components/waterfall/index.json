@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "waterfall-item": "../waterfall-item/index"
+  }
+} 

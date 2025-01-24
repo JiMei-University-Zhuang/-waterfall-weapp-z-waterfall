@@ -1,0 +1,15 @@
+{
+  "name": "waterfall-weapp",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "clean": "lerna clean"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+} 

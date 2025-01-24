@@ -1,0 +1,21 @@
+<scroll-view 
+  class="waterfall" 
+  scroll-y 
+  bindscroll="onScroll"
+  style="column-gap: {{columnGap}}rpx;"
+>
+  <view class="waterfall-column">
+    <block wx:for="{{leftItems}}" wx:key="*this">
+      <waterfall-item>
+        <slot name="item-{{item}}"></slot>
+      </waterfall-item>
+    </block>
+  </view>
+  <view class="waterfall-column">
+    <block wx:for="{{rightItems}}" wx:key="*this">
+      <waterfall-item>
+        <slot name="item-{{item}}"></slot>
+      </waterfall-item>
+    </block>
+  </view>
+</scroll-view> 

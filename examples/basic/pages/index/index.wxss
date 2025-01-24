@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.waterfall-item {
+  background: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.waterfall-item .title {
+  padding: 16rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.waterfall-item image {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+} 
