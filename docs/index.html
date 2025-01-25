@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Waterfall - 微信小程序瀑布流组件</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#features">特性</a>
+                <a href="#installation">安装</a>
+                <a href="#quickstart">快速开始</a>
+                <a href="#api">API</a>
+                <a href="#examples">示例</a>
+            </nav>
+            <h1>Z-Waterfall</h1>
+            <p>一个轻量级、高性能的微信小程序瀑布流组件，支持懒加载和自动布局计算。</p>
+            <div class="buttons">
+                <a href="#quickstart" class="button primary">快速开始</a>
+                <a href="https://github.com/yourusername/z-waterfall" class="button">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section id="features" class="section">
+                <h2>✨ 特性</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>🖼️ 图片懒加载</h3>
+                        <p>自动处理图片懒加载，优化性能</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>📱 上拉加载更多</h3>
+                        <p>支持上拉加载更多数据</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>🎨 灵活的样式自定义</h3>
+                        <p>支持自定义样式，满足不同需求</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>📐 智能间距计算</h3>
+                        <p>自动计算并优化布局间距</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>🔌 原生组件模式</h3>
+                        <p>类似 swiper 的使用方式</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>🔄 数据与视图解耦</h3>
+                        <p>更灵活的数据处理方式</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="installation" class="section">
+                <h2>📦 安装</h2>
+                <div class="code-block">
+                    <h3>使用 npm</h3>
+                    <pre><code class="language-bash">npm install @waterfall-weapp/z-waterfall</code></pre>
+                    <h3>使用 yarn</h3>
+                    <pre><code class="language-bash">yarn add @waterfall-weapp/z-waterfall</code></pre>
+                </div>
+            </section>
+
+            <section id="quickstart" class="section">
+                <h2>🚀 快速开始</h2>
+                <div class="code-block">
+                    <h3>1. 引入组件</h3>
+                    <pre><code class="language-json">{
+  "usingComponents": {
+    "waterfall": "@waterfall-weapp/z-waterfall/src/components/waterfall/index"
+  }
+}</code></pre>
+
+                    <h3>2. 使用组件</h3>
+                    <pre><code class="language-xml">&lt;waterfall 
+  column="2"
+  column-gap="10"
+  row-gap="10"
+  bindloadmore="onLoadMore"
+&gt;
+  &lt;block wx:for="{{list}}" wx:key="id"&gt;
+    &lt;view slot="item-{{index}}"&gt;
+      &lt;image 
+        lazy-load
+        src="{{item.image}}"
+        mode="widthFix"
+        style="width: 100%;"
+      /&gt;
+      &lt;view class="title"&gt;{{item.title}}&lt;/view&gt;
+    &lt;/view&gt;
+  &lt;/block&gt;
+&lt;/waterfall&gt;</code></pre>
+                </div>
+            </section>
+
+            <section id="api" class="section">
+                <h2>📖 API</h2>
+                <h3>Props</h3>
+                <table class="api-table">
+                    <thead>
+                        <tr>
+                            <th>属性</th>
+                            <th>说明</th>
+                            <th>类型</th>
+                            <th>默认值</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>column</td>
+                            <td>瀑布流列数</td>
+                            <td>number</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>columnGap</td>
+                            <td>列间距（单位：rpx）</td>
+                            <td>number</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>rowGap</td>
+                            <td>行间距（单位：rpx）</td>
+                            <td>number</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>loadMoreThreshold</td>
+                            <td>触发加载更多的距离阈值（单位：px）</td>
+                            <td>number</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="examples" class="section">
+                <h2>🌰 示例</h2>
+                <p>查看完整示例请访问 <a href="examples/basic.html">示例页面</a></p>
+            </section>
+
+            <section id="notes" class="section">
+                <h2>📝 注意事项</h2>
+                <ul class="notes-list">
+                    <li>确保图片设置了 <code>mode="widthFix"</code> 以保证正确的宽高比</li>
+                    <li>建议使用 <code>lazy-load</code> 属性来优化图片加载性能</li>
+                    <li>列表项必须有唯一的 <code>key</code> 值</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>MIT Licensed | Copyright © 2024</p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername/z-waterfall">GitHub</a>
+                <a href="https://www.npmjs.com/package/@waterfall-weapp/z-waterfall">NPM</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-xml.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
